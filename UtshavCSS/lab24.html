@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surface Area of Cuboid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Surface Area of a Cuboid</h2>
+    
+    <label>Length:</label>
+    <input type="number" id="length" placeholder="Enter length" required>
+
+    <label>Width:</label>
+    <input type="number" id="width" placeholder="Enter width" required>
+
+    <label>Height:</label>
+    <input type="number" id="height" placeholder="Enter height" required>
+
+    <button onclick="calculateArea()">Calculate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateArea() {
+      const length = parseFloat(document.getElementById("length").value);
+      const width = parseFloat(document.getElementById("width").value);
+      const height = parseFloat(document.getElementById("height").value);
+
+      if (isNaN(length) || isNaN(width) || isNaN(height) || length <= 0 || width <= 0 || height <= 0) {
+        document.getElementById("result").innerHTML = "Please enter valid positive numbers!";
+        return;
+      }
+
+      // Formula for surface area of a cuboid: 2(lw + lh + wh)
+      const area = 2 * (length * width + length * height + width * height);
+
+      document.getElementById("result").innerHTML = 
+        `Surface Area = ${area.toFixed(2)} square units`;
+    }
+  </script>
+
+</body>
+</html>
+

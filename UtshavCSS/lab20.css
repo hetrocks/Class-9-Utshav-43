@@ -1,0 +1,24 @@
+body{
+
+	background: black;
+}
+
+.new {
+	font-size : 20px;
+	color : green;
+	background : neongreen;
+}
+.student {
+	overflow: hidden;
+	width : 300px;
+	height : 300px;
+	background: red;
+	border : 5 px solid black;
+	border-radius : 50px;
+	margin : 0 auto;
+
+}
+.newstudent {
+	background : blue;
+	font-size: 50px;
+}
